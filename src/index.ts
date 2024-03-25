@@ -1,1 +1,1 @@
-import * as posts from "./types/posts"
+import * as Posts from "./types/posts"
