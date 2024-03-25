@@ -2,6 +2,10 @@
   "name": "sed-share-modules",
   "version": "1.0.0",
   "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git://https://github.com/LANUBETV/sed-share-modules"
+  },
   "scripts": {
     "build": "tsc -p tsconfig.json"
   },
