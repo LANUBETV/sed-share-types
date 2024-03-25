@@ -1,4 +1,4 @@
-import * as Posts from "./types/posts"
+import type {Posts} from "./types/posts"
 
 
 export { Posts }
