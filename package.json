@@ -2,6 +2,8 @@
   "name": "sed-share-modules",
   "version": "1.0.0",
   "description": "",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git://https://github.com/LANUBETV/sed-share-modules"
@@ -10,7 +12,7 @@
     "build": "tsc -p tsconfig.json"
   },
   "keywords": [],
-  "author": "",
+  "author": "LordCrainer",
   "license": "ISC",
   "devDependencies": {
     "typescript": "^5.4.3"
