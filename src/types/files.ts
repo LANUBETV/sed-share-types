@@ -1,5 +1,5 @@
 export interface Files {
-  id?: string;
+  _id?: string;
   name: string;
   path: string;
   size?: number;

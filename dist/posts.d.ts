@@ -1,58 +1,60 @@
 import { BaseEntity } from "../shared/base.entities";
+import { StatusFiles } from "./files";
 export interface Posts extends BaseEntity {
-    id: string;
+    _id?: string;
     createdBy: string;
-    folderId: string;
-    metadata: {
-        tag: string;
-        title: string;
-        announcer: string | null;
-        organization: {
-            name: string;
-            id: string;
-        };
-        responsable: string | null;
-        version: string | null;
-        duration: string;
-        product: string | null;
-        orderPattern?: string | null;
-        city: string | null;
-        comment?: string | null;
-    };
+    folderId?: string[];
+    organizationId: string;
+    metadata: PostsMetadata;
+    invoiceId?: string;
+    parentId?: string;
     type: string;
-    status: StatusPosts;
-    files: Files[];
-    destionations: Destinations[];
+    status: Partial<StatusPosts>;
+    destionations?: Destinations[];
+    files?: FilesDestionations[];
+    historic?: Historic[];
+}
+interface Historic {
+    _id?: string;
+    dateTime: Date;
+    user: {
+        id: string;
+        name: string;
+    };
+    description: string;
+    fileId?: string;
+}
+export interface PostsMetadata {
+    title: string;
+    duration: string;
+    tags?: string[];
+    announcer?: string | null;
+    organization?: {
+        name: string;
+        id: string;
+    };
+    responsable?: string | null;
+    version?: string | null;
+    product?: string | null;
+    orderPattern?: string | null;
+    city?: string | null;
+    comment?: string | null;
 }
 interface Destinations {
     id: string;
-    name: string;
-    fileId: string;
+    name?: string;
+    status?: Number;
+    quality?: string;
+    postId?: string;
+    fileId?: string;
 }
-interface Files {
+interface FilesDestionations extends BaseEntity {
     id: string;
+    status: StatusFiles;
+    version: number;
     name: string;
     path: string;
-    size: number;
-    standard: number;
-    format: string;
-    width: number;
-    height: number;
-    duration: number;
-    frameRate: number;
-    bitRate: number;
-    codec: string;
-    aspectRatio: string;
-    audioChannels: number;
-    sampleRate: number;
-    extension: string;
-    status: StatusFiles;
-}
-interface StatusFiles {
-    approved: number;
-    playable: boolean;
-    downloaded: boolean;
-    deleted: boolean;
+    filename: string;
 }
 interface StatusPosts {
     completed: boolean;
@@ -62,7 +64,7 @@ interface StatusPosts {
     deleted: boolean;
     marked: boolean;
     file: boolean;
-    approved: number;
+    approved: boolean;
     durationAlert: boolean;
 }
 export {};

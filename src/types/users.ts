@@ -1,11 +1,13 @@
 import { BaseEntity } from "../shared/base.entities";
+import { Organizations } from "./organizations";
 
-export interface User extends BaseEntity {
-  name?: string;
-  lastname?: string;
+export interface Users extends BaseEntity {
+  _id?: string;
+  organizations?: Organizations[];
+  name: string;
   email: string;
-  password: string;
-  roleId?: string;
+  password?: string;
+  timezone?: string;
 }
 
 export type AuthToken = {
