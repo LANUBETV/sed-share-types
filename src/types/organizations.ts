@@ -1,5 +1,6 @@
+import { BaseEntity } from "../shared/base.entities";
 
-export interface Organizations {
+export interface Organizations extends BaseEntity{
   _id?: string;
   name: string;
   description: string;
