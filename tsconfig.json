@@ -16,6 +16,9 @@
     "baseUrl": "./",
     "rootDir": "./",
     "declaration": true,
+    "paths": {
+      "@pp-shared/*": ["./dist/*"]
+    }
 
   },
   "include": ["src/**/*"],
