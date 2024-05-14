@@ -8,6 +8,7 @@ export interface Users extends BaseEntity {
   email: string;
   password?: string;
   timezone?: string;
+  isSuperAdmin?:| boolean;
 }
 
 export type AuthToken = {
