@@ -3,12 +3,27 @@ import { Organizations } from "./organizations";
 
 export interface Users extends BaseEntity {
   _id?: string;
-  organizations?: Organizations[];
+  organizations?: UsersOrganizations[];
+  archivedOrganizations?: UsersOrganizations[];
   name: string;
   email: string;
   password?: string;
   timezone?: string;
   isSuperAdmin?:| boolean;
+}
+
+interface UsersOrganizations {
+  _id: string;
+  organizationId: string;
+  role: string;
+  status?: Partial<StatusOrganizations>;
+  settings: Organizations['settings'];
+}
+
+interface StatusOrganizations {
+  actived: boolean;
+  deleted: boolean;
+  notificated: boolean;
 }
 
 export type AuthToken = {
