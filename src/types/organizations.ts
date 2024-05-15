@@ -10,7 +10,6 @@ export interface Organizations extends BaseEntity{
   website: string;
   logo: string;
   settings: Object;
-  status: Partial<StatusOrganizations>;
   profile: Partial<ProfileOrganizations>;
 }
 
@@ -22,10 +21,4 @@ interface ProfileOrganizations {
   businessLine: string;
   businessSector: string;
   city: string;
-}
-
-interface StatusOrganizations {
-  active: boolean;
-  deleted: boolean;
-  notification: boolean;
 }
