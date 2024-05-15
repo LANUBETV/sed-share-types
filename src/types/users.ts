@@ -15,9 +15,9 @@ export interface Users extends BaseEntity {
 interface UsersOrganizations {
   _id: string;
   organizationId: string;
-  role: string;
+  role: number;
   status?: Partial<StatusOrganizations>;
-  settings: Organizations['settings'];
+  settings?: Organizations['settings'];
 }
 
 interface StatusOrganizations {
