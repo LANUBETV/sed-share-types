@@ -18,6 +18,7 @@ interface UsersOrganizations {
   role: number;
   status?: Partial<StatusOrganizations>;
   settings?: Organizations['settings'];
+  profile?: Object;
 }
 
 interface StatusOrganizations {
