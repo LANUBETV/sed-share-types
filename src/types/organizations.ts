@@ -7,6 +7,7 @@ export interface Organizations extends BaseEntity{
   profile?: Partial<ProfileOrganizations>;
   settings?: Object;
   branding?: BrandingInfo;
+  type?: string;
 }
 
 interface ContactInfo {
