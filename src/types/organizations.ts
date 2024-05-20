@@ -10,13 +10,15 @@ export interface Organizations extends BaseEntity{
 }
 
 interface ContactInfo {
-  address: string;
   phone: string;
   email: string;
   description: string;
+  title: string;
+  name: string;
 }
 
 interface ProfileOrganizations {
+  address: string;
   ruc: string;
   socialReason: string;
   commercialName: string;
