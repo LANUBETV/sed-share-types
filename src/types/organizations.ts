@@ -10,10 +10,13 @@ export interface Organizations extends BaseEntity{
 }
 
 interface ContactInfo {
-  address: string;
   phone: string;
   email: string;
-  description: string;
+  description?: string;
+  title?: string;
+  name: string;
+  address?: string;
+  type: 'contact' | 'billing' | 'shipping' | 'legal' | 'other';
 }
 
 interface ProfileOrganizations {
@@ -23,6 +26,7 @@ interface ProfileOrganizations {
   businessLine: string;
   businessSector: string;
   city: string;
+  country: string;
 }
 
 interface BrandingInfo {
