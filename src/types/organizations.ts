@@ -1,5 +1,12 @@
 import { BaseEntity } from "../shared/base.entities";
 
+enum TypeOrganization {
+  OTHER,
+  CRAETIVE_AGENCY,
+  MEDIA_AGENCY,
+  PRODUCER,
+}
+
 export interface Organizations extends BaseEntity{
   _id?: string;
   name: string;
@@ -7,16 +14,16 @@ export interface Organizations extends BaseEntity{
   profile?: Partial<ProfileOrganizations>;
   settings?: Object;
   branding?: BrandingInfo;
-  type?: string;
 }
 
 interface ContactInfo {
-  phone: string;
-  email: string;
+  phone?: string;
+  email?: string;
   description?: string;
   title?: string;
   name: string;
   address?: string;
+  city?: string;
   type: 'contact' | 'billing' | 'shipping' | 'legal' | 'other';
 }
 
@@ -24,10 +31,11 @@ interface ProfileOrganizations {
   ruc: string;
   socialReason: string;
   commercialName: string;
-  businessLine: string;
-  businessSector: string;
-  city: string;
-  country: string;
+  businessLine?: string;
+  businessSector?: string;
+  city?: string;
+  country?: string;
+  type?: TypeOrganization;
 }
 
 interface BrandingInfo {
