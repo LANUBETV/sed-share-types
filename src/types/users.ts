@@ -24,7 +24,7 @@ interface UsersOrganizations {
 interface StatusOrganizations {
   actived: boolean;
   deleted: boolean;
-  notificated: boolean;
+  notify: boolean;
 }
 
 export type AuthToken = {

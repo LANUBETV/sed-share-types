@@ -12,7 +12,7 @@ export interface Organizations extends BaseEntity{
   name: string;
   contact: ContactInfo[];
   profile?: Partial<ProfileOrganizations>;
-  settings?: Object;
+  settings?: Object | { notify: boolean };
   branding?: BrandingInfo;
 }
 
