@@ -1,10 +1,11 @@
 import { BaseEntity } from "../shared/base.entities";
 
 enum TypeOrganization {
-  OTHER,
+  PERSONAL,
   CRAETIVE_AGENCY,
   MEDIA_AGENCY,
   PRODUCER,
+  CHANNEL,
 }
 
 export interface Organizations extends BaseEntity{
@@ -12,8 +13,9 @@ export interface Organizations extends BaseEntity{
   name: string;
   contact: ContactInfo[];
   profile?: Partial<ProfileOrganizations>;
-  settings?: Object | { notify: boolean };
+  settings?: Object;
   branding?: BrandingInfo;
+  type: TypeOrganization;
 }
 
 interface ContactInfo {
@@ -35,7 +37,7 @@ interface ProfileOrganizations {
   businessSector?: string;
   city?: string;
   country?: string;
-  type?: TypeOrganization;
+  type?: number;
 }
 
 interface BrandingInfo {
