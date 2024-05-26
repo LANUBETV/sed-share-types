@@ -8,6 +8,7 @@ export interface Folder extends BaseEntity {
   ancestors?: string[];
   parentId?: string;
   type: TypeFolder;
+  organizationId: string;
 }
 
 type TypeFolder = 'root' | 'folder' | 'file';
