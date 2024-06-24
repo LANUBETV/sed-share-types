@@ -19,6 +19,72 @@ interface UsersOrganizations {
   status?: Partial<StatusOrganizations>;
   settings?: Organizations['settings'];
   profile?: Object;
+  folderPermissions?: Record<string, PermissionsByFolder>;
+}
+
+interface PermissionsByFolder {
+  post: {
+    view: {
+      name: string,
+      code: string,
+      value: boolean
+    };
+    create?: {
+      name: string,
+      code: string,
+      value: boolean
+    };
+    edit?: {
+      name: string,
+      code: string,
+      value: boolean
+    };
+    delete?: {
+      name: string,
+      code: string,
+      value: boolean
+    };
+    send?: {
+      name: string,
+      code: string,
+      value: boolean
+    };
+    download?: {
+      name: string,
+      code: string,
+      value: boolean
+    };
+    approve?: {
+      name: string,
+      code: string,
+      value: boolean
+    };
+  }
+  isAdmin: {
+    name: string,
+    code: string,
+    value: boolean
+  };
+  view?: {
+    name: string,
+    code: string,
+    value: boolean
+  };
+  create?: {
+    name: string,
+    code: string,
+    value: boolean
+  };
+  edit?: {
+    name: string,
+    code: string,
+    value: boolean
+  };
+  delete?: {
+    name: string,
+    code: string,
+    value: boolean
+  };
 }
 
 interface StatusOrganizations {
