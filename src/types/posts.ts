@@ -4,7 +4,7 @@ import { StatusFiles } from "./files";
 export interface Posts extends BaseEntity {
   _id?: string;
   createdBy: string;
-  folderId?: string[];
+  folderId?: string;
   organizationId: string;
   metadata: PostsMetadata
   invoiceId?: string;
