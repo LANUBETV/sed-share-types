@@ -1,4 +1,4 @@
-import { BaseEntity } from "../shared/base.entities";
+import { BaseEntity } from '../shared/base.entities';
 
 enum TypeOrganization {
   PERSONAL,
@@ -8,14 +8,32 @@ enum TypeOrganization {
   CHANNEL,
 }
 
-export interface Organizations extends BaseEntity{
+export interface Organizations extends BaseEntity {
   _id?: string;
   name: string;
   contact: ContactInfo[];
   profile?: Partial<ProfileOrganizations>;
-  settings?: Object;
+  settings?: OrganizationSettings;
   branding?: BrandingInfo;
   type: TypeOrganization;
+}
+
+interface OrganizationSettings {
+  notify: boolean;
+  technicalConfig: OrganizationTechnicalConfig;
+  transfer?: string;
+  channels: string[];
+}
+
+interface OrganizationTechnicalConfig {
+  format: string;
+  resolution: {
+    width: number;
+    height: number;
+  };
+  audio: number;
+  region?: number;
+  observations?: string;
 }
 
 interface ContactInfo {
