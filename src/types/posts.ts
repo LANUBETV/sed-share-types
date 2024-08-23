@@ -11,7 +11,7 @@ export interface Posts extends BaseEntity {
   parentId?: string;
   type: string;
   status: Partial<StatusPosts>;
-  destionations?: Destinations[];
+  destinations?: Destinations[];
   files?: FilesDestionations[];
   historic?: Historic[];
 }
