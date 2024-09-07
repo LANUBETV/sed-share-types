@@ -20,19 +20,28 @@ export interface Organizations extends BaseEntity {
 
 interface OrganizationSettings {
   notify: boolean;
-  technicalConfig: OrganizationTechnicalConfig;
-  transfer?: string;
-  channels: string[];
+  technicalConfig?: OrganizationTechnicalConfig[];
+  transfer?: Partial<TransferInfo>[];
+  channels?: string[];
+}
+
+interface TransferInfo {
+  type: string;
+  host: string;
+  user: string;
+  password: string;
+  uri?: string;
 }
 
 interface OrganizationTechnicalConfig {
   format: string;
+  quality?: string;
   resolution: {
     width: number;
     height: number;
   };
   audio: number;
-  region?: number;
+  region?: boolean;
   observations?: string;
 }
 
