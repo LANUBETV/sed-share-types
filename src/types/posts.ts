@@ -11,7 +11,7 @@ export interface Posts extends BaseEntity {
   parentId?: string;
   type: string;
   status: Partial<StatusPosts>;
-  destinations?: Destinations[];
+  destinations?: PostDestinations[];
   files?: FilesDestionations[];
   historic?: Historic[];
 }
@@ -38,7 +38,7 @@ export interface PostsMetadata {
   comment?: string | null;
 }
 
-interface Destinations {
+export interface PostDestinations {
   id: string;
   name?: string;
   status?: Number;
@@ -67,3 +67,23 @@ interface StatusPosts {
   approved: boolean;
   durationAlert: boolean;
 }
+
+export enum PostStatus {
+  DRAFT,
+  PENDING,
+  APPROVED,
+  REJECTED,
+  SENT,
+  DELETED,
+  RECEPTED,
+}
+
+export const PostStatusLabels: { [key in PostStatus]: string } = {
+  [PostStatus.DRAFT]: 'Borrador',
+  [PostStatus.PENDING]: 'Pendiente',
+  [PostStatus.APPROVED]: 'Aprobado',
+  [PostStatus.REJECTED]: 'Rechazado',
+  [PostStatus.SENT]: 'Enviado',
+  [PostStatus.DELETED]: 'Eliminado',
+  [PostStatus.RECEPTED]: 'Recibido',
+};
