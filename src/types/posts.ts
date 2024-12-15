@@ -59,7 +59,7 @@ interface FilesDestionations extends BaseEntity {
 interface StatusPosts {
   completed: boolean;
   destination: boolean;
-  sended: boolean;
+  sended: number;
   downloaded: boolean;
   deleted: boolean;
   marked: boolean;
