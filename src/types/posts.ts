@@ -43,8 +43,6 @@ export interface PostDestinations {
   name?: string;
   status?: PostDestinationStatus;
   quality?: string;
-  postId?: string ;
-  fileId?: string;
 }
 
 export enum PostDestinationStatus {
