@@ -41,7 +41,7 @@ export interface PostsMetadata {
 export interface PostDestinations {
   id: string;
   name?: string;
-  status?: Number;
+  status?: number;
   quality?: string;
   postId?: string ;
   fileId?: string;
