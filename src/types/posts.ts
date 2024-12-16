@@ -41,10 +41,16 @@ export interface PostsMetadata {
 export interface PostDestinations {
   id: string;
   name?: string;
-  status?: number;
+  status?: PostDestinationStatus;
   quality?: string;
   postId?: string ;
   fileId?: string;
+}
+
+export enum PostDestinationStatus {
+  ERROR,
+  PENDING,
+  SENT,
 }
 
 interface FilesDestionations extends BaseEntity {
@@ -59,7 +65,7 @@ interface FilesDestionations extends BaseEntity {
 interface StatusPosts {
   completed: boolean;
   destination: boolean;
-  sended: number;
+  sent: boolean;
   downloaded: boolean;
   deleted: boolean;
   marked: boolean;
