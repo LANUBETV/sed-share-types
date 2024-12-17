@@ -38,7 +38,7 @@ export interface PostsMetadata {
   comment?: string | null;
 }
 
-export interface PostDestinations {
+export interface PostDestinations extends BaseEntity {
   id: string;
   name?: string;
   status?: PostDestinationStatus;
