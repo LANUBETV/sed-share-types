@@ -56,8 +56,9 @@ interface FilesDestionations extends BaseEntity {
   status: StatusFiles;
   version: number;
   name: string;
-  path: string;
-  filename: string;
+  fileId: string;
+  // path: string;
+  // filename: string;
 }
 
 interface StatusPosts {
