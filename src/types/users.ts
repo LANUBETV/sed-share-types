@@ -1,5 +1,5 @@
-import { BaseEntity } from "../shared/base.entities";
-import { Organizations } from "./organizations";
+import { BaseEntity } from '../shared/base.entities';
+import { Organizations } from './organizations';
 
 export interface Users extends BaseEntity {
   _id?: string;
@@ -9,7 +9,12 @@ export interface Users extends BaseEntity {
   email: string;
   password?: string;
   timezone?: string;
-  isSuperAdmin?:| boolean;
+  isSuperAdmin?: boolean;
+  comparePassword?: (
+    candidatePassword: string,
+    storedHashPassword: string
+  ) => Promise<boolean>;
+  setPassword?: (password: string) => Promise<string>;
 }
 
 interface UsersOrganizations {
@@ -25,65 +30,65 @@ interface UsersOrganizations {
 interface PermissionsByFolder {
   post: {
     view: {
-      name: string,
-      code: string,
-      value: boolean
+      name: string;
+      code: string;
+      value: boolean;
     };
     create?: {
-      name: string,
-      code: string,
-      value: boolean
+      name: string;
+      code: string;
+      value: boolean;
     };
     edit?: {
-      name: string,
-      code: string,
-      value: boolean
+      name: string;
+      code: string;
+      value: boolean;
     };
     delete?: {
-      name: string,
-      code: string,
-      value: boolean
+      name: string;
+      code: string;
+      value: boolean;
     };
     send?: {
-      name: string,
-      code: string,
-      value: boolean
+      name: string;
+      code: string;
+      value: boolean;
     };
     download?: {
-      name: string,
-      code: string,
-      value: boolean
+      name: string;
+      code: string;
+      value: boolean;
     };
     approve?: {
-      name: string,
-      code: string,
-      value: boolean
+      name: string;
+      code: string;
+      value: boolean;
     };
-  }
+  };
   isAdmin: {
-    name: string,
-    code: string,
-    value: boolean
+    name: string;
+    code: string;
+    value: boolean;
   };
   view?: {
-    name: string,
-    code: string,
-    value: boolean
+    name: string;
+    code: string;
+    value: boolean;
   };
   create?: {
-    name: string,
-    code: string,
-    value: boolean
+    name: string;
+    code: string;
+    value: boolean;
   };
   edit?: {
-    name: string,
-    code: string,
-    value: boolean
+    name: string;
+    code: string;
+    value: boolean;
   };
   delete?: {
-    name: string,
-    code: string,
-    value: boolean
+    name: string;
+    code: string;
+    value: boolean;
   };
 }
 
