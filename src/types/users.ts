@@ -15,7 +15,10 @@ export interface Users extends BaseEntity {
     storedHashPassword: string
   ) => Promise<boolean>;
   setPassword?: (password: string) => Promise<string>;
+  toDTO?: () => UserDTO;
 }
+
+interface UserDTO extends Omit<Users, 'password'> {}
 
 interface UsersOrganizations {
   _id: string;
