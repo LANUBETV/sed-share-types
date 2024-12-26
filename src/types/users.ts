@@ -10,12 +10,30 @@ export interface Users extends BaseEntity {
   password?: string;
   timezone?: string;
   isSuperAdmin?: boolean;
-  comparePassword?: (
+
+  /**
+   * Compares the provided password with the stored hashed password.
+   * @param candidatePassword - The password to compare.
+   * @param storedHashPassword - The stored hashed password.
+   * @returns A promise that resolves to a boolean indicating if the passwords match.
+   */
+  comparePassword?(
     candidatePassword: string,
     storedHashPassword: string
-  ) => Promise<boolean>;
-  setPassword?: (password: string) => Promise<string>;
-  toDTO?: () => UserDTO;
+  ): Promise<boolean>;
+
+  /**
+   * Sets the password by hashing it.
+   * @param password - The password to hash.
+   * @returns A promise that resolves to the hashed password.
+   */
+  setPassword?(password: string): Promise<string>;
+
+  /**
+   * Converts the user entity to a Data Transfer Object (DTO).
+   * @returns A UserDTO object.
+   */
+  toDTO?(): UserDTO;
 }
 
 interface UserDTO extends Omit<Users, 'password'> {}
