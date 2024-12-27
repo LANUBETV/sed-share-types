@@ -8,18 +8,19 @@ export interface Users extends BaseEntity {
   name: string;
   email: string;
   password?: string;
+  passwordHash?: string;
   timezone?: string;
   isSuperAdmin?: boolean;
 
   /**
    * Compares the provided password with the stored hashed password.
-   * @param candidatePassword - The password to compare.
-   * @param storedHashPassword - The stored hashed password.
+   * @param password - The password to compare.
+   * @param passwordHash - The stored hashed password.
    * @returns A promise that resolves to a boolean indicating if the passwords match.
    */
-  comparePassword?(
-    candidatePassword: string,
-    storedHashPassword: string
+  checkPasswordHash?(
+    password: string,
+    passwordHash: string
   ): Promise<boolean>;
 
   /**
