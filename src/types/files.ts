@@ -23,8 +23,8 @@ interface Metadata {
 }
 
 export interface StatusFiles {
-  approved: number;
+  approved?: number;
   playable: boolean;
-  downloaded: boolean;
+  downloaded?: boolean;
   deleted?: boolean;
 }

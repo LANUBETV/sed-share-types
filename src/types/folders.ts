@@ -10,6 +10,7 @@ export interface Folder extends BaseEntity {
   type: TypeFolder;
   organizationId: string;
   level?: number;
+  hasChildren?: boolean;
 }
 
 type TypeFolder = 'root' | 'folder' | 'file';

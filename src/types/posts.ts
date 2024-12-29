@@ -4,14 +4,14 @@ import { StatusFiles } from "./files";
 export interface Posts extends BaseEntity {
   _id?: string;
   createdBy: string;
-  folderId?: string[];
+  folderId?: string;
   organizationId: string;
   metadata: PostsMetadata
   invoiceId?: string;
   parentId?: string;
   type: string;
   status: Partial<StatusPosts>;
-  destionations?: Destinations[];
+  destinations?: PostDestinations[];
   files?: FilesDestionations[];
   historic?: Historic[];
 }
@@ -38,13 +38,17 @@ export interface PostsMetadata {
   comment?: string | null;
 }
 
-interface Destinations {
+export interface PostDestinations extends BaseEntity {
   id: string;
   name?: string;
-  status?: Number;
+  status?: PostDestinationStatus;
   quality?: string;
-  postId?: string ;
-  fileId?: string;
+}
+
+export enum PostDestinationStatus {
+  ERROR,
+  PENDING,
+  SENT,
 }
 
 interface FilesDestionations extends BaseEntity {
@@ -52,14 +56,15 @@ interface FilesDestionations extends BaseEntity {
   status: StatusFiles;
   version: number;
   name: string;
-  path: string;
-  filename: string;
+  fileId: string;
+  // path: string;
+  // filename: string;
 }
 
 interface StatusPosts {
   completed: boolean;
   destination: boolean;
-  sended: boolean;
+  sent: boolean;
   downloaded: boolean;
   deleted: boolean;
   marked: boolean;
@@ -67,3 +72,23 @@ interface StatusPosts {
   approved: boolean;
   durationAlert: boolean;
 }
+
+export enum PostStatus {
+  DRAFT,
+  PENDING,
+  APPROVED,
+  REJECTED,
+  SENT,
+  DELETED,
+  RECEPTED,
+}
+
+export const PostStatusLabels: { [key in PostStatus]: string } = {
+  [PostStatus.DRAFT]: 'Borrador',
+  [PostStatus.PENDING]: 'Pendiente',
+  [PostStatus.APPROVED]: 'Aprobado',
+  [PostStatus.REJECTED]: 'Rechazado',
+  [PostStatus.SENT]: 'Enviado',
+  [PostStatus.DELETED]: 'Eliminado',
+  [PostStatus.RECEPTED]: 'Recibido',
+};
