@@ -92,12 +92,3 @@ export const PostStatusLabels: { [key in PostStatus]: string } = {
   [PostStatus.DELETED]: 'Eliminado',
   [PostStatus.RECEPTED]: 'Recibido',
 };
-
-export interface TestPost {
-  _id: String;
-  title: String;
-  description?: String;
-  status?: PostStatus;
-  createdAt?: Date;
-  updatedAt?: Date;
-}
