@@ -1,12 +1,12 @@
-import { BaseEntity } from "../shared/base.entities";
-import { StatusFiles } from "./files";
+import { BaseEntity } from '../shared/base.entities';
+import { StatusFiles } from './files';
 
 export interface Posts extends BaseEntity {
   _id?: string;
   createdBy: string;
   folderId?: string;
   organizationId: string;
-  metadata: PostsMetadata
+  metadata: PostsMetadata;
   invoiceId?: string;
   parentId?: string;
   type: string;
@@ -92,3 +92,12 @@ export const PostStatusLabels: { [key in PostStatus]: string } = {
   [PostStatus.DELETED]: 'Eliminado',
   [PostStatus.RECEPTED]: 'Recibido',
 };
+
+export interface TestPost {
+  _id: String;
+  title: String;
+  description?: String;
+  status?: PostStatus;
+  createdAt?: Date;
+  updatedAt?: Date;
+}
