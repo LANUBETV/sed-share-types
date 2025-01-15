@@ -1,5 +1,4 @@
-import { BaseEntity } from "src/shared/base.entities";
-
+import { BaseEntity } from 'src/shared/base.entities';
 
 export interface Folder extends BaseEntity {
   _id?: string;

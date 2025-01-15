@@ -18,10 +18,7 @@ export interface Users extends BaseEntity {
    * @param passwordHash - The stored hashed password.
    * @returns A promise that resolves to a boolean indicating if the passwords match.
    */
-  checkPasswordHash?(
-    password: string,
-    passwordHash: string
-  ): Promise<boolean>;
+  checkPasswordHash?(password: string, passwordHash: string): Promise<boolean>;
 
   /**
    * Sets the password by hashing it.
@@ -45,7 +42,7 @@ interface UsersOrganizations {
   role: number;
   status?: Partial<StatusOrganizations>;
   settings?: Organizations['settings'];
-  profile?: Object;
+  profile?: object;
   folderPermissions?: Record<string, PermissionsByFolder>;
 }
 
