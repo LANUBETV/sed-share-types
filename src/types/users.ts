@@ -11,7 +11,9 @@ export interface Users extends BaseEntity {
   passwordHash?: string;
   timezone?: string;
   isSuperAdmin?: boolean;
+}
 
+export interface IUserMethods {
   /**
    * Compares the provided password with the stored hashed password.
    * @param password - The password to compare.
