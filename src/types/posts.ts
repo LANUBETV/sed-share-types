@@ -2,7 +2,7 @@ import { BaseEntity } from '../shared/base.entities';
 import { StatusFiles } from './files';
 
 export interface Posts extends BaseEntity {
-  _id?: string;
+  _id: string;
   createdBy: string;
   folderId?: string;
   organizationId: string;
