@@ -7,7 +7,7 @@ export interface Users extends BaseEntity {
   archivedOrganizations?: UsersOrganizations[];
   name: string;
   email: string;
-  password?: string;
+  password: string;
   passwordHash?: string;
   timezone?: string;
   isSuperAdmin?: boolean;
