@@ -38,7 +38,7 @@ export interface IUserMethods {
 
 interface UserDTO extends Omit<Users, 'password'> {}
 
-interface UsersOrganizations {
+export interface UsersOrganizations {
   _id: string;
   organizationId: string;
   role: number;
