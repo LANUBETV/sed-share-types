@@ -41,6 +41,7 @@ interface UserDTO extends Omit<Users, 'password'> {}
 export interface UsersOrganizations {
   _id: string;
   organizationId: string;
+  name: string;
   role: number;
   status?: Partial<StatusOrganizations>;
   settings?: Organizations['settings'];
