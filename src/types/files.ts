@@ -1,7 +1,7 @@
 import { BaseEntity } from '../shared/base.entities';
 
 export interface Files extends BaseEntity {
-  _id?: string;
+  _id: string;
   name: string;
   filename: string;
   organizationId: string;

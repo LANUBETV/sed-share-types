@@ -12,7 +12,7 @@ export interface Posts extends BaseEntity {
   type: string;
   status: Partial<StatusPosts>;
   destinations?: PostDestinations[];
-  files?: FilesDestionations[];
+  files?: PostFiles[];
   historic?: Historic[];
 }
 
@@ -51,7 +51,7 @@ export enum PostDestinationStatus {
   SENT,
 }
 
-interface FilesDestionations extends BaseEntity {
+interface PostFiles extends BaseEntity {
   id: string;
   status: StatusFiles;
   version: number;
