@@ -1,6 +1,6 @@
-type IRoles = 'superAdmin' | 'admin' | 'manager' | 'user'
+type RoleTypes = 'superAdmin' | 'admin' | 'manager' | 'user'
 
-const roles: Record<IRoles, number> = {
+const roles: Record<RoleTypes, number> = {
   superAdmin: 50,
   admin: 30,
   manager: 20,
@@ -10,7 +10,7 @@ const roles: Record<IRoles, number> = {
 let roleByCode: { [key: number]: string } = {}
 
 for (let role in roles) {
-  roleByCode[roles[role as IRoles]] = role
+  roleByCode[roles[role as RoleTypes]] = role
 }
-export type { IRoles }
+export type { RoleTypes as RoleTypes }
 export { roles, roleByCode }

@@ -2,7 +2,7 @@ import { BaseEntity } from '../shared/base.entities';
 import { Organizations } from './organizations';
 
 export interface Users extends BaseEntity {
-  _id?: string;
+  _id: string;
   organizations?: UsersOrganizations[];
   archivedOrganizations?: UsersOrganizations[];
   name: string;
